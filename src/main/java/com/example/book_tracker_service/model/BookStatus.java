@@ -11,6 +11,9 @@ public class BookStatus {
     @Column(name = "id")
     private Long id;
 
+    @Column(name = "book_id")
+    private Long bookId;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, name = "status")
     private BookStatusEnum status;
@@ -21,12 +24,23 @@ public class BookStatus {
     @Column(name = "return_by")
     private LocalDateTime returnBy;
 
+    @Column(name = "is_deleted")
+    private boolean isDeleted;
+
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(Long id) {
+        this.bookId = id;
     }
 
     public BookStatusEnum getStatus() {
@@ -51,5 +65,13 @@ public class BookStatus {
 
     public void setReturnBy(LocalDateTime returnBy) {
         this.returnBy = returnBy;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
     }
 }

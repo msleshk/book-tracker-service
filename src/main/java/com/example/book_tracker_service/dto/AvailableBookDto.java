@@ -1,31 +1,20 @@
 package com.example.book_tracker_service.dto;
 
-import java.time.LocalDateTime;
-
 public class AvailableBookDto {
 
-    private Long id; // ID книги
-    private LocalDateTime returnBy; // Время возврата книги (если нужно)
+    private Long bookId;
 
-    public AvailableBookDto(Long id, LocalDateTime returnBy) {
-        this.id = id;
-        this.returnBy = returnBy;
+    public AvailableBookDto(Long id) {
+        this.bookId = id;
     }
 
-    public Long getId() {
-        return id;
+    public Long getBookId() {
+        return bookId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
-    public LocalDateTime getReturnBy() {
-        return returnBy;
-    }
-
-    public void setReturnBy(LocalDateTime returnBy) {
-        this.returnBy = returnBy;
-    }
 }
 

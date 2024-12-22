@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface BookStatusService {
 
-    void addBook(Long id);
+    void addBook(Long bookId);
 
     List<AvailableBookDto> getFreeBooks();
 
-    void updateBookStatus(Long id, BookStatusEnum status);
+    void updateBookStatus(Long bookId, BookStatusEnum status);
 
-    void deleteBook(Long id);
+    void deleteBook(Long bookId);
 }
