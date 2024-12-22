@@ -6,7 +6,7 @@ import com.example.book_tracker_service.model.BookStatus;
 import com.example.book_tracker_service.model.BookStatusEnum;
 import com.example.book_tracker_service.repository.BookStatusRepository;
 import com.example.book_tracker_service.service.BookStatusService;
-import com.example.book_tracker_service.util.Mapper;
+import com.example.book_tracker_service.util.BookStatusMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.time.LocalDateTime;
@@ -18,9 +18,9 @@ import java.util.stream.Collectors;
 public class BookStatusServiceImpl implements BookStatusService {
 
     private final BookStatusRepository bookStatusRepository;
-    private final Mapper<BookStatus, AvailableBookDto> mapper;
+    private final BookStatusMapper mapper;
 
-    public BookStatusServiceImpl(BookStatusRepository bookStatusRepository, Mapper<BookStatus, AvailableBookDto> mapper) {
+    public BookStatusServiceImpl(BookStatusRepository bookStatusRepository, BookStatusMapper mapper) {
         this.bookStatusRepository = bookStatusRepository;
         this.mapper = mapper;
     }
