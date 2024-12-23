@@ -4,6 +4,9 @@ public class AvailableBookDto {
 
     private Long bookId;
 
+    public AvailableBookDto() {
+    }
+
     public AvailableBookDto(Long id) {
         this.bookId = id;
     }
