@@ -10,9 +10,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import java.io.IOException;
-import java.util.List;
+
 @Component
 public class JwtAuthFilter extends OncePerRequestFilter {
 
@@ -56,6 +55,11 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     }
 
     private boolean isExcludedFromFilter(String requestURI, String method) {
-        return (requestURI.startsWith("/book-status") && (method.equals("GET") || method.equals("PATCH")));
+        return requestURI.startsWith("/swagger-ui")
+                || requestURI.startsWith("/v3/api-docs")
+                || requestURI.startsWith("/swagger-resources")
+                || requestURI.startsWith("/webjars")
+                || (requestURI.startsWith("/book-status") && (method.equals("GET") || method.equals("PATCH")));
     }
+
 }

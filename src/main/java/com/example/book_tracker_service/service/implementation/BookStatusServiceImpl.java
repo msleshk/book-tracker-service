@@ -9,6 +9,7 @@ import com.example.book_tracker_service.service.BookStatusService;
 import com.example.book_tracker_service.util.BookStatusMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -51,9 +52,7 @@ public class BookStatusServiceImpl implements BookStatusService {
             LocalDateTime now = LocalDateTime.now();
             bookStatus.setBorrowedAt(now);
             bookStatus.setReturnBy(now.plusDays(7));
-        }
-
-        else if (status == BookStatusEnum.AVAILABLE) {
+        } else if (status == BookStatusEnum.AVAILABLE) {
             bookStatus.setBorrowedAt(null);
             bookStatus.setReturnBy(null);
         }

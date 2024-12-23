@@ -9,6 +9,7 @@ import java.time.LocalDateTime;
 public class BookStatus {
     @Id
     @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "book_id")
@@ -25,7 +26,7 @@ public class BookStatus {
     private LocalDateTime returnBy;
 
     @Column(name = "is_deleted")
-    private boolean isDeleted;
+    private boolean deleted;
 
     public Long getId() {
         return id;
@@ -68,10 +69,10 @@ public class BookStatus {
     }
 
     public boolean isDeleted() {
-        return isDeleted;
+        return deleted;
     }
 
     public void setDeleted(boolean deleted) {
-        isDeleted = deleted;
+        this.deleted = deleted;
     }
 }

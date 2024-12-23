@@ -11,6 +11,8 @@ import java.util.Optional;
 @Repository
 public interface BookStatusRepository extends JpaRepository<BookStatus, Long> {
     List<BookStatus> getByStatusAndDeletedFalse(BookStatusEnum status);
+
     void deleteByBookId(Long bookId);
+
     Optional<BookStatus> findByBookIdAndDeletedFalse(Long bookId);
 }
